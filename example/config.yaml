@@ -1,0 +1,35 @@
+name: project_name
+projects:
+  example_app:
+    type: flutter
+    name: Example Project
+    launchConfig:
+      flavors:
+        - dev
+        - prod
+    buildTasks:
+      - analyze
+      - pubGet
+      - clean
+      - build
+      - localize
+
+  flutter_app:
+    type: flutter
+    name: Flutter App
+    launchConfig:
+    buildTasks:
+      - analyze
+      - pubGet
+      - clean
+      - build
+      - localize
+
+  dart_app:
+    type: dart
+    name: Dart Project
+    buildTasks:
+      - analyze
+      - pubGet
+      - clean
+      - build

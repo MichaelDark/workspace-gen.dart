@@ -1,0 +1,572 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "Example Project",
+      "path": "example_app"
+    },
+    {
+      "name": "Flutter App",
+      "path": "flutter_app"
+    },
+    {
+      "name": "Dart Project",
+      "path": "dart_app"
+    }
+  ],
+  "launch": {
+    "configurations": [
+      {
+        "name": "Example Project [dev][debug]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Example Project}",
+        "program": "${workspaceFolder:Example Project}/lib/main.dart",
+        "args": [
+          "--debug",
+          "--flavor",
+          "dev"
+        ]
+      },
+      {
+        "name": "Example Project [dev][release]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Example Project}",
+        "program": "${workspaceFolder:Example Project}/lib/main.dart",
+        "args": [
+          "--release",
+          "--flavor",
+          "dev"
+        ]
+      },
+      {
+        "name": "Example Project [prod][debug]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Example Project}",
+        "program": "${workspaceFolder:Example Project}/lib/main.dart",
+        "args": [
+          "--debug",
+          "--flavor",
+          "prod"
+        ]
+      },
+      {
+        "name": "Example Project [prod][release]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Example Project}",
+        "program": "${workspaceFolder:Example Project}/lib/main.dart",
+        "args": [
+          "--release",
+          "--flavor",
+          "prod"
+        ]
+      },
+      {
+        "name": "Flutter App [debug]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Flutter App}",
+        "program": "${workspaceFolder:Flutter App}/lib/main.dart",
+        "args": [
+          "--debug"
+        ]
+      },
+      {
+        "name": "Flutter App [release]",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder:Flutter App}",
+        "program": "${workspaceFolder:Flutter App}/lib/main.dart",
+        "args": [
+          "--release"
+        ]
+      }
+    ],
+    "compounds": []
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "[example_app] analyze",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Example Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "analyze"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[flutter_app] analyze",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Flutter App}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "analyze"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[dart_app] analyze",
+        "type": "shell",
+        "command": "dart",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Dart Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "analyze"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[ALL] analyze",
+        "type": "shell",
+        "group": "build",
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "dependsOn": [
+          "[example_app] analyze",
+          "[flutter_app] analyze",
+          "[dart_app] analyze"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[example_app] pub get",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Example Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "get"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[flutter_app] pub get",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Flutter App}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "get"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[dart_app] pub get",
+        "type": "shell",
+        "command": "dart",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Dart Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "get"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[ALL] pub get",
+        "type": "shell",
+        "group": "build",
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "dependsOn": [
+          "[example_app] pub get",
+          "[flutter_app] pub get",
+          "[dart_app] pub get"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[example_app] clean",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Example Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "clean"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[flutter_app] clean",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Flutter App}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "clean"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[dart_app] clean",
+        "type": "shell",
+        "command": "dart",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Dart Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "clean"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[ALL] clean",
+        "type": "shell",
+        "group": "build",
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "dependsOn": [
+          "[example_app] clean",
+          "[flutter_app] clean",
+          "[dart_app] clean"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[example_app] localize",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Example Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "gen-l10n"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[flutter_app] localize",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Flutter App}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "gen-l10n"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[ALL] localize",
+        "type": "shell",
+        "group": "build",
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "dependsOn": [
+          "[example_app] localize",
+          "[flutter_app] localize"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[example_app] build",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Example Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[flutter_app] build",
+        "type": "shell",
+        "command": "flutter",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Flutter App}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[dart_app] build",
+        "type": "shell",
+        "command": "dart",
+        "group": "build",
+        "options": {
+          "cwd": "${workspaceFolder:Dart Project}"
+        },
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build",
+          "--delete-conflicting-outputs"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "[ALL] build",
+        "type": "shell",
+        "group": "build",
+        "runOptions": {
+          "instanceLimit": 1,
+          "reevaluateOnRerun": false
+        },
+        "dependsOn": [
+          "[example_app] build",
+          "[flutter_app] build",
+          "[dart_app] build"
+        ],
+        "presentation": {
+          "echo": true,
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "dart-code.dart-code",
+      "dart-code.flutter"
+    ],
+    "unwantedRecommendations": []
+  },
+  "settings": {
+    "files.exclude": {
+      "example_app": true,
+      "flutter_app": true,
+      "dart_app": true
+    }
+  }
+}
