@@ -8,7 +8,7 @@ class Generator {
   Generator(this.projects);
 
   Map<String, dynamic> generateJson() {
-    final buildTaskGenerator = BuildTaskGenerator();
+    final generator = BuildTaskGenerator();
 
     return {
       'folders': [
@@ -24,13 +24,12 @@ class Generator {
       'tasks': {
         'version': '2.0.0',
         'tasks': [
-          ...BuildTask.values.map((buildTask) {
-            final taskProjects = projects
-                .where((project) => project.buildTasks.contains(buildTask));
+          ...BuildTask.values.map((task) {
+            final tasks =
+                projects.where((project) => project.buildTasks.contains(task));
             return [
-              ...taskProjects.map((project) =>
-                  buildTaskGenerator.createTask(buildTask, project)),
-              buildTaskGenerator.createTaskForAll(buildTask, taskProjects),
+              ...tasks.map((p) => generator.createTask(task, p)),
+              if (tasks.isNotEmpty) generator.createTaskForAll(task, tasks),
             ];
           }).expand((e) => e),
         ],
