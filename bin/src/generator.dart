@@ -10,6 +10,20 @@ class Generator {
   Map<String, dynamic> generateJson() {
     final generator = BuildTaskGenerator();
 
+    final excludedDirectories = projects
+        .map(
+          (project) {
+            final segments = project.path.split('/');
+            return [
+              project.path,
+              if (segments.length > 1) segments.first,
+            ];
+          },
+        )
+        .expand((e) => e)
+        .toSet()
+        .toList();
+
     return {
       'folders': [
         {'name': 'root', 'path': '.'},
@@ -40,7 +54,7 @@ class Generator {
       },
       'settings': {
         'files.exclude': {
-          for (final project in projects) project.path: true,
+          for (final projectPath in excludedDirectories) projectPath: true,
         }
       }
     };
